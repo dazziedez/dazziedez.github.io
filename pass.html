@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link href="./styles.css" rel="stylesheet" />
+    <script src="./script.js"></script>
+    <title>dazzie.dev</title>
+    <link
+      rel="icon"
+      type="image/x-icon"
+      href="https://cdn.discordapp.com/avatars/912091795318517821/f8c5c952eefbe14c02b9589b7c55486c.png"
+    />
+  </head>
+  <body class="main-page">
+    <div class="container password-container">
+      <h1>Password Generator</h1>
+      <form class="password-form">
+        <div class="form-group">
+          <label for="length">Password Length:</label>
+          <input
+            type="number"
+            id="length"
+            name="length"
+            min="8"
+            max="128"
+            value="16"
+          />
+        </div>
+        <div class="form-group">
+          <label for="uppercase">ABC</label>
+          <input type="checkbox" id="uppercase" name="uppercase" checked />
+        </div>
+        <div class="form-group">
+          <label for="lowercase">abc</label>
+          <input type="checkbox" id="lowercase" name="lowercase" checked />
+        </div>
+        <div class="form-group">
+          <label for="numbers">123</label>
+          <input type="checkbox" id="numbers" name="numbers" checked />
+        </div>
+        <div class="form-group">
+          <label for="symbols">$#!</label>
+          <input type="checkbox" id="symbols" name="symbols" checked />
+        </div>
+        <div class="form-group">
+          <button type="submit" class="password-button">Generate</button>
+        </div>
+      </form>
+      <br />
+      <textarea
+        id="password"
+        class="password-textarea"
+        rows="5"
+        cols="50"
+        readonly
+      ></textarea>
+    </div>
+    <div class="footer credits" onclick="openLink('credits')">
+      background by
+      <a href="https://www.pixiv.net/en/artworks/106315001" target="_blank"
+        ><b>10shionn</b></a
+      >
+    </div>
+    <script>
+      const form = document.querySelector("form");
+      const passwordField = document.querySelector("#password");
+
+      form.addEventListener("submit", function (event) {
+        event.preventDefault();
+
+        const length = parseInt(document.querySelector("#length").value);
+        const uppercase = document.querySelector("#uppercase").checked;
+        const lowercase = document.querySelector("#lowercase").checked;
+        const numbers = document.querySelector("#numbers").checked;
+        const symbols = document.querySelector("#symbols").checked;
+
+        const password = generatePassword(
+          length,
+          uppercase,
+          lowercase,
+          numbers,
+          symbols
+        );
+
+        passwordField.value = password;
+      });
+
+      function generatePassword(
+        length,
+        uppercase,
+        lowercase,
+        numbers,
+        symbols
+      ) {
+        let charset = "";
+        let password = "";
+
+        if (uppercase) {
+          charset += "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
+        }
+
+        if (lowercase) {
+          charset += "abcdefghijklmnopqrstuvwxyz";
+        }
+
+        if (numbers) {
+          charset += "0123456789";
+        }
+
+        if (symbols) {
+          charset += '!@#$%^&*()_+-={}[]|\\:;"<>,.?/~`';
+        }
+
+        for (let i = 0; i < length; i++) {
+          password += charset.charAt(
+            Math.floor(Math.random() * charset.length)
+          );
+        }
+
+        return password;
+      }
+
+      passwordField.addEventListener("click", function () {
+        passwordField.select();
+        document.execCommand("copy");
+      });
+
+      const passwordTextarea = document.querySelector("#password");
+
+      passwordTextarea.addEventListener("mousedown", () => {
+        passwordTextarea.classList.add("resizing");
+      });
+
+      passwordTextarea.addEventListener("mouseup", () => {
+        passwordTextarea.classList.remove("resizing");
+      });
+    </script>
+  </body>
+</html>

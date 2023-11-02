@@ -1,0 +1,239 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap');
+
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+    background-image: url('./img/bg.png');
+}
+
+a {
+    text-decoration: none;
+    background: radial-gradient(ellipse at center, #f3b187, #e76c4e);
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+    display: inline-block;
+    animation: gradientShift 5s linear infinite;
+    background-size: 200% 200%;
+}
+
+@keyframes gradientShift {
+    0% {
+        background-position: 100% 100%;
+    }
+
+    100% {
+        background-position: -100% -100%;
+    }
+}
+
+::selection {
+    background-color: #e48563;
+    color: #272727;
+    text-shadow: none;
+}
+
+.container {
+    user-select: none;
+    color: #dadada;
+    font-family: 'Roboto', sans-serif;
+    background-color: #272727;
+    padding: 20px;
+    border-radius: 20px;
+    box-shadow: 0 5px 5px rgba(0, 0, 0, 0.5);
+}
+
+.center-content {
+    text-align: center;
+}
+
+.container .hello {
+    font-size: 15px;
+    font-weight: 300;
+    padding-top: 10px;
+}
+
+.container .main {
+    font-size: 30px;
+    font-weight: 700;
+    padding-top: 10px;
+}
+
+.container .about {
+    font-size: 15px;
+    font-weight: 200;
+    padding-top: 10px;
+    text-align: center;
+}
+
+.card {
+    cursor: pointer;
+    color: #dadada;
+    display: inline-block;
+    width: 200px;
+    height: 100px;
+    border-radius: 10px;
+    margin: 20px;
+    padding: 20px;
+    background-color: #2b2b2b;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    transition: color 0.3s ease, background-color 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.card-content h2 {
+    text-align: center;
+    margin-top: 0px;
+    transition: margin-top 0.3s;
+}
+
+.card-content p {
+    margin-top: -10px;
+    text-align: center;
+    opacity: 0.8;
+}
+
+.card:hover {
+    color: #272727;
+    background-color: #e48563;
+    transform: scale(1.05) rotate(2.5deg);
+}
+
+.footer {
+    user-select: none;
+    cursor: pointer;
+    font-family: Arial, Helvetica, sans-serif;
+    position: fixed;
+    bottom: 10px;
+    right: 10px;
+    color: #dadada;
+    background-color: #272727;
+    padding: 15px;
+    border-radius: 15px;
+    transition: transform 0.3s ease, color 0.3s ease, background-color 0.3s ease;
+}
+
+.footer a {
+    transition: color 0.3s ease;
+
+}
+
+.footer:hover a {
+    color: #272727;
+}
+
+.footer:hover {
+    transform: scale(1.05) translate(-5px, 0px);
+    color: #272727;
+    background-color: #e48563;
+}
+
+.password-form {
+    font-size: 15px;
+    font-weight: 200;
+    padding-top: 10px;
+}
+
+.form-group {
+    display: flex;
+    align-items: center;
+    margin-bottom: 10px;
+}
+
+.form-group label {
+    font-weight: 400;
+    padding-right: 10px;
+}
+
+.form-group input[type="number"],
+.form-group input[type="checkbox"] {
+    margin: 0;
+}
+
+.container .password h1 {
+    text-align: center;
+}
+
+.password-button {
+    background-color: #272727;
+    color: #dadada;
+    font-family: 'Roboto', sans-serif;
+    font-weight: 600;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    border: 2px solid #333333;
+    cursor: pointer;
+    transition: transform 0.3s, border 0.3s, background-color 0.3s, color 0.3s;
+}
+
+.password-button:hover {
+    transform: scale(1.05);
+    background-color: #e48563;
+    color: #333333;
+    border: 2px solid #e48563;
+}
+
+.password-textarea {
+    width: 94%;
+    padding: 10px;
+    color: #dadada;
+    background-color: #272727;
+    border: 2px solid #333333;
+    border-radius: 5px;
+    resize: none;
+    outline: none;
+    cursor: pointer;
+}
+
+.password-textarea {
+    width: 94%;
+    height: 50px;
+    padding: 10px;
+    color: #dadada;
+    background-color: #272727;
+    border: 2px solid #333333;
+    border-radius: 5px;
+    resize: none;
+    outline: none;
+    cursor: pointer;
+    transition: transform 0.3s ease;
+}
+
+.password-textarea.resizing {
+    transform: scale(0.95);
+}
+
+
+.form-group input[type="checkbox"] {
+    cursor: pointer;
+    width: 20px;
+    appearance: none;
+    height: 20px;
+    vertical-align: middle;
+    background-color: #272727;
+    border: 2px solid #333333;
+    border-radius: 10px;
+    transition: background-color 0.1s ease, border 0.1s ease;
+}
+
+.form-group input[type="checkbox"]:checked {
+    background-color: #e48563;
+    border: 2px solid #e48563;
+}
+
+.form-group input[type="number"] {
+    width: 50px;
+    outline: none;
+    color: #dadada;
+    border: 2px solid #333333;
+    background-color: #272727;
+    border-radius: 5px;
+    padding: 5px;
+    margin: 5px 0;
+    appearance: none;
+    -moz-appearance: textfield;
+    
+}
