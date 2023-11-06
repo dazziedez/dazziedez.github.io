@@ -1,52 +1,324 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta property="og:title" content="is this real">
-    <meta property="og:description" content="nop">
-    <link href="./styles.css" rel="stylesheet">
-    <title>hello!!</title>
-    <link rel="icon" type="image/x-icon" href="https://cdn.discordapp.com/avatars/912091795318517821/f8c5c952eefbe14c02b9589b7c55486c.png">
-    <script src="./script.js"></script>
-</head>
-<body>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link href="./styles.css" rel="stylesheet" />
+    <title>dazzie.dev</title>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"
+    />
+    <link
+      rel="icon"
+      type="image/x-icon"
+      href="./img/proxy-image.png"
+    />
+    <script>
+      fetch("https://api.lanyard.rest/v1/users/912091795318517821")
+        .then((response) => response.json())
+        .then((data) => {
+          const profilePictureUrl = `https://cdn.discordapp.com/avatars/${
+            data.data.discord_user.id
+          }/${data.data.discord_user.avatar}${
+            data.data.discord_user.avatar.startsWith("a_") ? ".gif" : ".png"
+          }`;
+
+          const profilePictureDiv = document.querySelector(".profile-picture");
+          profilePictureDiv.style.backgroundImage = `url(${profilePictureUrl})`;
+          profilePictureDiv.style.borderRadius = "50%";
+        });
+    </script>
+  </head>
+  <body>
+    <style>
+      .container .me-irl {
+        display: flex;
+      }
+      .profile-picture {
+        width: 128px;
+        height: 128px;
+        background-size: cover;
+        background-position: center;
+        margin-top: 20px;
+        margin-left: 20px;
+        margin-right: 20px;
+        margin-bottom: 10px;
+      }
+      .main {
+        margin-top: 30px;
+        font-size: 50px;
+        text-align: left;
+      }
+      .about {
+        font-size: 20px;
+        margin-right: 20px;
+        margin-top: 10px;
+        text-align: center;
+      }
+
+      .container .hello {
+        text-align: center;
+      }
+
+      .card {
+        cursor: pointer;
+        color: #dadada;
+        display: inline-block;
+        width: 200px;
+        height: 100px;
+        border-radius: 10px;
+        margin: 20px;
+        margin-left: 20px;
+        padding: 20px;
+        background-color: #2b2b2b;
+        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        transition: color 0.3s ease, background-color 0.3s ease,
+          transform 0.3s ease, box-shadow 0.3s ease;
+      }
+
+      .card-content h2 {
+        text-align: center;
+        margin-top: 0px;
+        transition: margin-top 0.3s;
+      }
+
+      .card-content p {
+        margin-top: -10px;
+        text-align: center;
+        opacity: 0.8;
+      }
+
+      .card:hover {
+        color: #272727;
+        background-color: #e48563;
+        transform: scale(1.05) rotate(2.5deg);
+      }
+
+      .container .stuff {
+        text-align: left;
+        margin-left: 20px;
+        margin-top: 20px;
+        font-size: 18px;
+      }
+
+      .buttons {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+      }
+
+      .buttons .funny-arrow {
+        position: relative;
+        left: 7px;
+      }
+
+      .buttons .real {
+        background-color: #333;
+        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        display: flex;
+        border-radius: 20px;
+        flex-direction: row;
+        align-items: center;
+        margin-left: 30px;
+      }
+
+      .button {
+        color: #fff;
+        padding: 0px 10px;
+        text-align: center;
+        text-decoration: none;
+        display: block;
+        margin: 5px 0;
+        border-radius: 5px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        position: relative;
+        transition: transform 0.3s ease;
+      }
+
+      .button:hover {
+        transform: scale(1.1);
+      }
+      .tooltip {
+        visibility: hidden;
+        min-width: 80px;
+        background-color: #2b2b2b;
+        color: #dadada;
+        text-align: center;
+        border-radius: 10px;
+        padding: 5px;
+        position: absolute;
+        z-index: 1;
+        top: 100%;
+        left: 50%;
+        transform: translate(-50%, -50px) scale(70%, 70%);
+        opacity: 0;
+        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+      }
+
+    </style>
     <div class="container">
-        <div class="main center-content">
-            I'm <a href="https://github.com/dazziedez" data-text="dazzie" target="_blank">dazzie</a> :)
+      <div class="me-irl">
+        <a href="discord://-/users/912091795318517821">
+          <div class="profile-picture" alt="pet pet"></div>
+        </a>
+        <div>
+          <div class="main">
+            I'm
+            <a
+              href="https://discord.com/users/912091795318517821"
+              data-text="dazzie"
+              target="_blank"
+              >freezer</a
+            >
+            !!
+          </div>
+          <div class="about" style="text-align: left">
+            The world's best developer, full stop. <--- (that is indeed a full
+            stop)<br />
+            You can also call me freezer, deezer | load | 2bot, dazzie, or
+            simply deez!! <b>(no nuts)</b>
+          </div>
         </div>
-        <p class="about center-content">You can also call me freezer, deezer | load | 2bot, dazzie, or simply deez!! <b>(no nuts)</b><br>
-            I'm the world's best developer, i know anything and everything, including you.</p>
+      </div>
+      <div class="buttons">
+        <div class="real">
+          <a href="https://github.com/dazziedez" class="button" target="_blank">
+            <i class="fab fa-github"></i>
+            <div class="tooltip">GitHub</div>
+          </a>
+          <a
+            href="https://discord.gg/catposting"
+            class="button"
+            target="_blank"
+          >
+            <i class="fab fa-discord"></i>
+            <div class="tooltip">Server</div>
+          </a>
+          <a
+            href="https://yourworldoftext.com/~deezerload"
+            class="button"
+            target="_blank"
+          >
+            <i class="fa-solid fa-earth-europe"></i>
+            <div class="tooltip">Text world</div>
+          </a>
+        </div>
+        <img class ="funny-arrow" src="./img/my_stuff.png" width="90" />
+      </div>
+      <div class="stuff">I don't have much to show..</div>
 
-        <div class="card whet" onclick="openLink('whet')">
-            <div class="card-image"></div>
-            <div class="card-content">
-                <h2>whet bot</h2>
-                <p class="small-text">Mostly utilities for my server with some fun quirks.</p>
-            </div>
+      <div class="card" onclick="openLink('fridge')">
+        <div class="card-image"></div>
+        <div class="card-content">
+          <h2>fridge bot</h2>
+          <p class="small-text">
+            Silly discord bot developed with my friends!!
+          </p>
         </div>
-        <div class="card cat" onclick="openLink('pass')">
-            <div class="card-image"></div>
-            <div class="card-content">
-                <h2>passwowd gen :3</h2>
-                <p class="small-text">I just put a link to a different page in here. Isn't that crazy also balls</p>
-            </div>
+      </div>
+      <div class="card">
+        <div class="card-image"></div>
+        <div class="card-content">
+          <h2>what do</h2>
+          <p class="small-text">
+            please give me <br>..
+          </p>
         </div>
-        <div class="card posting" onclick="openLink('posting')">
-            <div class="card-image"></div>
-            <div class="card-content">
-                <h2>cat posting (real)</h2>
-                <p class="small-text">This is a discord server that I made and is mine. join join ojin join</p>
-            </div>
+      </div>
+      <div class="card">
+        <div class="card-image"></div>
+        <div class="card-content">
+          <h2>i put here</h2>
+          <p class="small-text">
+            some ideas thanks<br>..
+          </p>
         </div>
+      </div>
 
-        <div class="hello center-content">
-            I like cats, programming, and cats.<br>also © 2023 <a href="https://github.com/dazziedez" data-text="dazzie" target="_blank">dazzie</a> 👍
-        </div>
+      <div class="hello center-content">
+        I like cats, programming, and cats.<br />also © 2023
+        <a
+          href="https://github.com/dazziedez"
+          data-text="dazzie"
+          target="_blank"
+          >dazzie</a
+        >
+        👍
+      </div>
     </div>
+
     <div class="footer credits" onclick="openLink('credits')">
-        background by <a href=""><b>10shionn</b></a>
+      background by <a href=""><b>10shionn</b></a>
     </div>
-</body>
-</html>
 
+    <script>
+      function openLink(cardName) {
+        const cardLinks = {
+          whet: "https://github.com/dazziedez/idkfuckingbotting-",
+          posting: "https://discord.gg/catposting",
+          credits: "https://www.pixiv.net/en/artworks/106315001",
+          fridge:
+            "https://discord.com/api/oauth2/authorize?client_id=1008875850403414049&permissions=2063732172992&scope=applications.commands%20bot",
+          pass: "pass.html",
+        };
+
+        if (cardLinks.hasOwnProperty(cardName)) {
+          window.open(cardLinks[cardName], "_blank");
+        }
+      }
+
+      const buttons = document.querySelectorAll(".button");
+
+      const animationDuration = 150;
+
+      buttons.forEach((button) => {
+        const tooltip = button.querySelector(".tooltip");
+        let animationFrameId;
+
+        button.addEventListener("mouseenter", () => {
+          animateTooltip(tooltip, 1);
+        });
+
+        button.addEventListener("mouseleave", () => {
+          animateTooltip(tooltip, 0);
+        });
+
+        function animateTooltip(element, targetOpacity) {
+          let opacity = parseFloat(window.getComputedStyle(element).opacity);
+          const duration = animationDuration;
+
+          function step(timestamp) {
+            if (!startTime) {
+              startTime = timestamp;
+            }
+            const progress = (timestamp - startTime) / duration;
+            opacity = lerp(opacity, targetOpacity, progress);
+            element.style.opacity = opacity;
+
+            if (progress < 1) {
+              animationFrameId = requestAnimationFrame(step);
+            } else {
+              if (targetOpacity === 0) {
+                element.style.visibility = "hidden";
+              }
+            }
+          }
+
+          let startTime = null;
+          if (targetOpacity === 1) {
+            element.style.visibility = "visible";
+          }
+
+          animationFrameId = requestAnimationFrame(step);
+        }
+
+        function lerp(start, end, t) {
+          return start * (1 - t) + end * t;
+        }
+      });
+    </script>
+  </body>
+</html>
