@@ -216,7 +216,7 @@
             <div class="tooltip">Text world</div>
           </a>
         </div>
-        <img class="funny-arrow" src="./img/my_stuff.png" width="90" />
+        <img class="funny-arrow" src="./img/my_stuff.png" width="90" onclick="changeBackground('./img/maltigi.jpg')"/>
       </div>
       <div class="stuff">I don't have much to show..</div>
 
@@ -261,6 +261,16 @@
     </div>
 
     <script>
+      function changeBackground(url) {
+        document.body.style.backgroundImage = `url(${url})`;
+        const divs = document.getElementsByTagName("div");
+        for (let i = 0; i < divs.length; i++) {
+          divs[i].style.backgroundImage = `url(${url})`;
+        }
+        const audio = new Audio('./img/sound.mp3');
+        audio.play();
+      }
+
       function openLink(cardName) {
         const cardLinks = {
           whet: "https://github.com/dazziedez/idkfuckingbotting-",
