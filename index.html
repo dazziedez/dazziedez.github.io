@@ -8,18 +8,14 @@
       property="og:description"
       content="This is a real website. I made it myself. I'm a real developer."
     />
-    <meta property="og:image" content="./img/kitty.jpg">
+    <meta property="og:image" content="./img/kitty.jpg" />
     <link href="./styles.css" rel="stylesheet" />
     <title>i am freezer</title>
     <link
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"
     />
-    <link
-      rel="icon"
-      type="image/x-icon"
-      href="./img/proxy-image.png"
-    />
+    <link rel="icon" type="image/x-icon" href="./img/proxy-image.png" />
     <script>
       fetch("https://api.lanyard.rest/v1/users/912091795318517821")
         .then((response) => response.json())
@@ -164,12 +160,20 @@
         box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
       }
 
+      .profile-picture {
+        cursor: move;
+        cursor: url(images/grab.cur);
+        cursor: grab;
+      }
+
+      .profile-picture:active {
+        cursor: url(images/grabbing.cur);
+        cursor: grabbing;
+      }
     </style>
     <div class="container">
       <div class="me-irl">
-        <a href="discord://-/users/912091795318517821">
-          <div class="profile-picture" alt="pet pet"></div>
-        </a>
+        <div class="profile-picture" alt="pet pet" title="pet pet"></div>
         <div>
           <div class="main">
             I'm
@@ -212,7 +216,7 @@
             <div class="tooltip">Text world</div>
           </a>
         </div>
-        <img class ="funny-arrow" src="./img/my_stuff.png" width="90" />
+        <img class="funny-arrow" src="./img/my_stuff.png" width="90" />
       </div>
       <div class="stuff">I don't have much to show..</div>
 
@@ -229,18 +233,14 @@
         <div class="card-image"></div>
         <div class="card-content">
           <h2>what do</h2>
-          <p class="small-text">
-            please give me <br>..
-          </p>
+          <p class="small-text">please give me <br />..</p>
         </div>
       </div>
       <div class="card">
         <div class="card-image"></div>
         <div class="card-content">
           <h2>i put here</h2>
-          <p class="small-text">
-            some ideas thanks<br>..
-          </p>
+          <p class="small-text">some ideas thanks<br />..</p>
         </div>
       </div>
 
