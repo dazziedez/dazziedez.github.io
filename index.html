@@ -24,7 +24,7 @@
             data.data.discord_user.id
           }/${data.data.discord_user.avatar}${
             data.data.discord_user.avatar.startsWith("a_") ? ".gif" : ".png"
-          }`;
+          }?size=512`;
 
           const profilePictureDiv = document.querySelector(".profile-picture");
           profilePictureDiv.style.backgroundImage = `url(${profilePictureUrl})`;
