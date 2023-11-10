@@ -10,7 +10,7 @@ body {
 
 a {
     text-decoration: none;
-    background: radial-gradient(ellipse at center, #b4b4b4, #969696);
+    background: radial-gradient(ellipse at center, rgb(69, 119, 96), #5cac91);
     -webkit-background-clip: text;
     background-clip: text;
     color: transparent;
@@ -30,13 +30,12 @@ a {
 }
 
 ::selection {
-    background-color: #d3ded7;
+    background-color: #c5c5c5;
     color: #272727;
     text-shadow: none;
 }
 
 .container {
-    user-select: none;
     color: #dadada;
     font-family: 'Roboto', sans-serif;
     background-color: #272727;
