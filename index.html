@@ -34,8 +34,14 @@
   </head>
   <body>
     <style>
+      body {
+        background-image: url("./img/bg.png");
+        background-position: center;
+        background-size: auto;
+      }
       .container .me-irl {
         display: flex;
+        align-items: center;
       }
       .profile-picture {
         width: 128px;
@@ -93,7 +99,7 @@
 
       .card:hover {
         color: #272727;
-        background-color: #e48563;
+        background-color: #c5c5c5;
         transform: scale(1.05) rotate(2.5deg);
       }
 
@@ -257,7 +263,7 @@
     </div>
 
     <div class="footer credits" onclick="openLink('credits')">
-      background by <a href=""><b>10shionn</b></a>
+      background by <a href=""><b>tsukumizu</b></a>
     </div>
 
     <script>
@@ -275,7 +281,7 @@
         const cardLinks = {
           whet: "https://github.com/dazziedez/idkfuckingbotting-",
           posting: "https://discord.gg/catposting",
-          credits: "https://www.pixiv.net/en/artworks/106315001",
+          credits: "https://twitter.com/lililjiliijili",
           fridge:
             "https://discord.com/api/oauth2/authorize?client_id=1008875850403414049&permissions=2063732172992&scope=applications.commands%20bot",
           pass: "pass.html",
