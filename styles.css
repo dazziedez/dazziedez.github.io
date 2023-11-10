@@ -6,12 +6,11 @@ body {
     align-items: center;
     height: 100vh;
     margin: 0;
-    background-image: url('./img/bg.png');
 }
 
 a {
     text-decoration: none;
-    background: radial-gradient(ellipse at center, #f3b187, #e76c4e);
+    background: radial-gradient(ellipse at center, #b4b4b4, #969696);
     -webkit-background-clip: text;
     background-clip: text;
     color: transparent;
@@ -31,7 +30,7 @@ a {
 }
 
 ::selection {
-    background-color: #e48563;
+    background-color: #d3ded7;
     color: #272727;
     text-shadow: none;
 }
@@ -95,5 +94,5 @@ a {
 .footer:hover {
     transform: scale(1.05) translate(-5px, 0px);
     color: #272727;
-    background-color: #e48563;
+    background-color: #c5c5c5;
 }
