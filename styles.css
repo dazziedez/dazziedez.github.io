@@ -1,5 +1,14 @@
 @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap');
 
+:root {
+    --hyper-one: rgb(192, 173, 133);
+    --hyper-two: rgb(156, 139, 118);
+    --accent: rgb(233, 228, 226);
+    --dark-one: rgb(39, 39, 39);
+    --dark-two: rgb(43, 43, 43);
+    font-family: 'Roboto', sans-serif;
+}
+
 body {
     display: flex;
     justify-content: center;
@@ -10,7 +19,7 @@ body {
 
 a {
     text-decoration: none;
-    background: radial-gradient(ellipse at center, rgb(69, 119, 96), #5cac91);
+    background: radial-gradient(ellipse at center, var(--hyper-one), var(--hyper-two));
     -webkit-background-clip: text;
     background-clip: text;
     color: transparent;
@@ -30,15 +39,15 @@ a {
 }
 
 ::selection {
-    background-color: #c5c5c5;
-    color: #272727;
+    background-color: var(--accent);
+    color: var(--dark-one);
     text-shadow: none;
 }
 
 .container {
-    color: #dadada;
+    color: var(--accent);
     font-family: 'Roboto', sans-serif;
-    background-color: #272727;
+    background-color: var(--dark-one);
     padding: 20px;
     border-radius: 20px;
     box-shadow: 0 5px 5px rgba(0, 0, 0, 0.5);
@@ -74,8 +83,8 @@ a {
     position: fixed;
     bottom: 10px;
     right: 10px;
-    color: #dadada;
-    background-color: #272727;
+    color: var(--accent);
+    background-color: var(--dark-one);
     padding: 15px;
     border-radius: 15px;
     transition: transform 0.3s ease, color 0.3s ease, background-color 0.3s ease;
@@ -87,11 +96,29 @@ a {
 }
 
 .footer:hover a {
-    color: #272727;
+    color: var(--dark-one);
 }
 
 .footer:hover {
     transform: scale(1.05) translate(-5px, 0px);
-    color: #272727;
-    background-color: #c5c5c5;
+    color: var(--dark-one);
+    background-color: var(--accent);
+}
+
+p code {
+    line-height: 1.5;
+    font-family: 'Roboto', sans-serif;
+    color: #cdd0f5;
+    background-color: #272b57;
+    border: 2px solid #272b57;
+    border-radius: 5px;
+    font-weight: 500;
+    transition: background-color 0.15s ease, border 0.15s ease, color 0.15s ease;
+}
+
+p code:hover {
+    cursor: pointer;
+    background-color: #5865f2;
+    border: 2px solid #5865f2;
+    color: #fff
 }
