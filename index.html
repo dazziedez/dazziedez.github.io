@@ -36,7 +36,6 @@
     <style>
       body {
         background-image: url("./img/bg.png");
-        background-position: center;
         background-size: auto;
       }
       .container .me-irl {
@@ -54,6 +53,7 @@
         margin-bottom: 10px;
       }
       .main {
+        user-select: none;
         margin-top: 30px;
         font-size: 50px;
         text-align: left;
@@ -70,8 +70,9 @@
       }
 
       .card {
+        user-select: none;
         cursor: pointer;
-        color: #dadada;
+        color: var(--accent);
         display: inline-block;
         width: 200px;
         height: 100px;
@@ -79,7 +80,7 @@
         margin: 20px;
         margin-left: 20px;
         padding: 20px;
-        background-color: #2b2b2b;
+        background-color: var(--dark-two);
         box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
         transition: color 0.3s ease, background-color 0.3s ease,
           transform 0.3s ease, box-shadow 0.3s ease;
@@ -98,8 +99,8 @@
       }
 
       .card:hover {
-        color: #272727;
-        background-color: #c5c5c5;
+        color: var(--dark-one);
+        background-color: var(--accent);
         transform: scale(1.05) rotate(2.5deg);
       }
 
@@ -122,7 +123,7 @@
       }
 
       .buttons .real {
-        background-color: #333;
+        background-color: var(--dark-two);
         box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
         display: flex;
         border-radius: 20px;
@@ -132,7 +133,7 @@
       }
 
       .button {
-        color: #fff;
+        color: var(--accent);
         padding: 0px 10px;
         text-align: center;
         text-decoration: none;
@@ -152,8 +153,8 @@
       .tooltip {
         visibility: hidden;
         min-width: 80px;
-        background-color: #2b2b2b;
-        color: #dadada;
+        background-color: var(--dark-two);
+        color: var(--accent);
         text-align: center;
         border-radius: 10px;
         padding: 5px;
@@ -176,6 +177,92 @@
         cursor: url(images/grabbing.cur);
         cursor: grabbing;
       }
+
+      .cards {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: center;
+      }
+      .expanded-card {
+        position: fixed;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%) scale(0.96);
+        width: 75%;
+        height: 75%;
+        color: var(--accent);
+        background-color: var(--dark-one);
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-start;
+        align-items: center;
+        border-radius: 15px;
+        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        max-width: 60%;
+        max-height: 80%;
+        overflow: auto;
+        z-index: 9999;
+        padding: 30px;
+        opacity: 0;
+        pointer-events: none;
+        transition: opacity 0.2s ease, transform 0.2s ease;
+        scrollbar-width: thin;
+      }
+
+      .expanded-card.active {
+        opacity: 1;
+        pointer-events: auto;
+        transform: translate(-50%, -50%) scale(1);
+      }
+
+      .esc-circle {
+        width: 30px;
+        height: 30px;
+        background-color: transparent;
+        border: 2px solid var(--accent);
+        opacity: 50%;
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        color: #fff;
+        font-size: 12px;
+        transition: opacity 0.1s ease;
+      }
+
+      .close-button {
+        position: absolute;
+        top: 30px;
+        right: 30px;
+        cursor: pointer;
+        z-index: 999;
+      }
+
+      .esc-circle:hover {
+        opacity: 100%;
+      }
+
+      #expandedTitle {
+        position: absolute;
+        top: 10px;
+        left: 50%;
+        transform: translateX(-50%);
+        z-index: 999;
+      }
+
+      .graahh {
+        line-height: 1.5;
+        font-size: 20px;
+        font-family: "Roboto", sans-serif;
+        background-color: var(--dark-two);
+        padding: 5px;
+        border-radius: 5px;
+        font-weight: 500;
+        transition: background-color 0.15s ease, border 0.15s ease,
+          color 0.15s ease;
+      }
+
     </style>
     <div class="container">
       <div class="me-irl">
@@ -222,36 +309,40 @@
             <div class="tooltip">Text world</div>
           </a>
         </div>
-        <img class="funny-arrow" src="./img/my_stuff.png" width="90" onclick="changeBackground('./img/maltigi.jpg')"/>
+        <img
+          class="funny-arrow"
+          src="./img/my_stuff.png"
+          width="90"
+          onclick="changeBackground('./img/maltigi.jpg')"
+        />
       </div>
       <div class="stuff">I don't have much to show..</div>
-
-      <div class="card" onclick="openLink('fridge')">
-        <div class="card-image"></div>
-        <div class="card-content">
-          <h2>fridge bot</h2>
-          <p class="small-text">
-            Silly discord bot developed with my friends!!
-          </p>
+      <div class="cards">
+        <div class="card" onclick="openLink('fridge')">
+          <div class="card-image"></div>
+          <div class="card-content">
+            <h2>fridge bot</h2>
+            <p class="small-text">
+              Silly discord bot developed with my friends!!
+            </p>
+          </div>
+        </div>
+        <div class="card" onclick="openLink('placeholder1')">
+          <div class="card-image"></div>
+          <div class="card-content">
+            <h2>what do</h2>
+            <p class="small-text">please give me <br />..</p>
+          </div>
+        </div>
+        <div class="card" onclick="openLink('placeholder2')">
+          <div class="card-image"></div>
+          <div class="card-content">
+            <h2>i put here</h2>
+            <p class="small-text">some ideas thanks<br />..</p>
+          </div>
         </div>
       </div>
-      <div class="card">
-        <div class="card-image"></div>
-        <div class="card-content">
-          <h2>what do</h2>
-          <p class="small-text">please give me <br />..</p>
-        </div>
-      </div>
-      <div class="card">
-        <div class="card-image"></div>
-        <div class="card-content">
-          <h2>i put here</h2>
-          <p class="small-text">some ideas thanks<br />..</p>
-        </div>
-      </div>
-
-      <div class="hello center-content">
-        © 2023
+      <div class="hello center-content">© 2023
         <a
           href="https://github.com/dazziedez"
           data-text="dazzie"
@@ -266,6 +357,18 @@
       background by <a href=""><b>tsukumizu</b></a>
     </div>
 
+    <div class="expanded-card" id="expandedCard">
+      <div class="close-button" onclick="closeExpandedCard()">
+        <div class="esc-circle">Esc</div>
+      </div>
+      <div class="expanded-content">
+        <h2 id="expandedTitle">Expanded Card Title</h2>
+        <p id="expandedContent">Expanded card content goes here...</p>
+        <p4>Press esc or also scroll up and click the close button :)</p4>
+      </div>
+    </div>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/marked/3.0.2/marked.min.js"></script>
     <script>
       function changeBackground(url) {
         document.body.style.backgroundImage = `url(${url})`;
@@ -273,23 +376,47 @@
         for (let i = 0; i < divs.length; i++) {
           divs[i].style.backgroundImage = `url(${url})`;
         }
-        const audio = new Audio('./img/sound.mp3');
+        const audio = new Audio("./img/sound.mp3");
         audio.play();
       }
 
-      function openLink(cardName) {
-        const cardLinks = {
-          whet: "https://github.com/dazziedez/idkfuckingbotting-",
-          posting: "https://discord.gg/catposting",
-          credits: "https://twitter.com/lililjiliijili",
-          fridge:
-            "https://discord.com/api/oauth2/authorize?client_id=1008875850403414049&permissions=2063732172992&scope=applications.commands%20bot",
-          pass: "pass.html",
-        };
-
-        if (cardLinks.hasOwnProperty(cardName)) {
-          window.open(cardLinks[cardName], "_blank");
+      document.addEventListener("keydown", function (event) {
+        if (event.key === "Escape") {
+          closeExpandedCard();
         }
+      });
+      function openLink(cardType) {
+        fetch(`markdown/${cardType}.md`)
+          .then((response) => {
+            if (!response.ok) {
+              throw new Error(`Failed to fetch Markdown file for ${cardType}`);
+            }
+            return response.text();
+          })
+          .then((markdownContent) => {
+            const htmlContent = marked(markdownContent);
+
+            document.querySelectorAll(".card-container").forEach((card) => {
+              card.style.opacity = "0";
+              card.style.pointerEvents = "none";
+            });
+
+            const expandedCard = document.getElementById("expandedCard");
+            expandedCard.classList.add("active");
+            document.getElementById("expandedTitle").innerText = cardType;
+            document.getElementById("expandedContent").innerHTML = htmlContent;
+          })
+          .catch((error) => {
+            console.error("Error:", error.message);
+          });
+      }
+      function closeExpandedCard() {
+        document.querySelectorAll(".card-container").forEach((card) => {
+          card.style.opacity = "1";
+          card.style.pointerEvents = "auto";
+        });
+
+        document.getElementById("expandedCard").classList.remove("active");
       }
 
       const buttons = document.querySelectorAll(".button");
