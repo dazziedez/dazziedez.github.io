@@ -1,11 +1,11 @@
 @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap');
 
 :root {
-    --hyper-one: rgb(192, 173, 133);
-    --hyper-two: rgb(156, 139, 118);
+    --hyper-one: rgb(250, 182, 191);
+    --hyper-two: rgb(245, 112, 127);
     --accent: rgb(233, 228, 226);
-    --dark-one: rgb(39, 39, 39);
-    --dark-two: rgb(43, 43, 43);
+    --dark-one: #232428;
+    --dark-two: #313338;
     font-family: 'Roboto', sans-serif;
 }
 
