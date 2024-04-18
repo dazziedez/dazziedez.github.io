@@ -129,3 +129,35 @@ p code:hover {
     border: 2px solid #5865f2;
     color: #fff
 }
+
+pre {
+    background-color: var(--dark-two);
+    padding: 10px;
+    border-radius: 5px;
+    border: 1px solid #444444;
+}
+
+pre code {
+    color: #fff;
+    font-family: 'Cascadia', sans-serif;
+    background-color: transparent;
+    border: none;
+    cursor: text;
+}
+
+pre code:hover {
+    color: #fff;
+    font-family: 'Cascadia', sans-serif;
+    background-color: transparent;
+    border: none;
+    cursor: text;
+}
+
+blockquote {
+    background-color: var(--dark-one);
+    border: 1px solid #444444;
+    border-left: 5px solid var(--hyper-two);
+    margin: 1.5em 0;
+    padding: 0.5em 1em;
+    border-radius: 5px;
+}
