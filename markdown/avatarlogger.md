@@ -13,7 +13,7 @@ A Flask-based web application designed for managing and displaying user avatars,
 ### Screenshots
 |Main (WIP)|User view|
 |---------|----------|
-| <img src="img/showcase/9Aat9Cj.png" alt="Main" width="450"> | <img src="img/showcase/MTBvCnp.png" alt="User" width="450"> |
+| <img src="img/showcase/9Aat9Cj.png" alt="Main" width="450" style="border-radius: 15px"> | <img src="img/showcase/MTBvCnp.png" alt="User" width="450" style="border-radius: 15px"> |
 
 ## Installation
 
