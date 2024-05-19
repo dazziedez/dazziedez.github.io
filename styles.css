@@ -1,16 +1,9 @@
 @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap');
 
-@font-face {
-    font-family: 'Cascadia';
-    src: url('../CascadiaMono.woff2') format('woff2');
-    font-weight: normal;
-    font-style: normal;
-}
-
 :root {
-    --hyper-one: rgb(250, 182, 191);
-    --hyper-two: rgb(245, 112, 127);
-    --accent: rgb(233, 228, 226);
+    --hyper-one: rgb(123, 208, 91);
+    --hyper-two: rgb(92, 157, 68);
+    --accent: rgb(227, 233, 226);
     --dark-one: #232428;
     --dark-two: #313338;
     font-family: 'Roboto', sans-serif;

@@ -35,7 +35,7 @@
   <body>
     <style>
       body {
-        background-image: url("./img/bg.jpg");
+        background-image: url("./img/bg.jpg"); /* Placeholder for when i want this to be an image again */
         background-size: cover;
         background-position: center;
       }
@@ -265,6 +265,9 @@
       }
 
     </style>
+    <video id="bgVideo" autoplay loop muted style="position:fixed; right:0; bottom:0; min-width:100%; min-height:100%; z-index:-100">
+      <source src="./img/bg.mp4" type="video/mp4">
+    </video>
     <div class="container">
       <div class="me-irl">
         <div class="profile-picture" alt="pet pet" title="pet pet"></div>
@@ -355,7 +358,7 @@
     </div>
 
     <div class="footer credits" onclick="openLink('credits')">
-      background by <a href="https://danbooru.donmai.us/posts/6752758" target="_blank"><b>よさり</b></a>
+      background by <a href="https://x.com/1nupool" target="_blank"><b>犬プール</b></a>
     </div>
 
     <div class="expanded-card" id="expandedCard">
